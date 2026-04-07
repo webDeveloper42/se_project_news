@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import "../../vendor/normalize.css";
+import "../../vendor/fonts.css";
 import "./App.css";
-import Page from "../Page/Page";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 
 function App() {
   return (
-    <Page>
-      <Header />
-      <Main />
-      <Footer />
-    </Page>
+    <div className="page">
+      <div className="page__content">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />} />
+        </Routes>
+        <Footer />
+      </div>
+    </div>
   );
 }
 

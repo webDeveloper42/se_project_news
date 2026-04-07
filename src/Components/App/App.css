@@ -1,0 +1,28 @@
+.page {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+.page__content {
+  height: 100vh;
+}
+.btn {
+  width: 176px;
+  height: 48px;
+  border-radius: 100px;
+}
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+.active__btn {
+  border-bottom: 1px solid #ffffff;
+}
+.nav {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 104px;
+  box-sizing: border-box;
+}

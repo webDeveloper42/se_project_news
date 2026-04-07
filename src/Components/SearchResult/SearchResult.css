@@ -1,0 +1,31 @@
+.search {
+  height: 974px;
+  background-color: #f5f6f7;
+  padding-left: 104px;
+  padding-right: 104px;
+}
+
+.search__title {
+  font-family: "Roboto Slab";
+  font-weight: 900;
+  color: #1a1b22;
+  font-size: 40px;
+  line-height: 46px;
+  letter-spacing: 0;
+  padding-top: 80px;
+  margin-bottom: 64px;
+}
+.search__btn-container {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+.search__btn-show-more {
+  font-family: "Roboto";
+  width: 288px;
+  height: 64px;
+  border: none;
+  border-radius: 80px;
+  color: #1a1b22;
+  background-color: #e8e8e8;
+}
