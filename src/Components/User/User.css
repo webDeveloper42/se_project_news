@@ -1,0 +1,45 @@
+.user {
+  flex: 1;
+}
+
+.user__header-text {
+  padding-left: 104px;
+  padding-top: 120px;
+  height: 294px;
+}
+.user__card-section {
+  height: 1280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f6f7;
+}
+.user__cards-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.user__header-top {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+  opacity: 50%;
+  margin-bottom: 28px;
+}
+.user__header-title {
+  font-family: "Roboto Slab";
+  font-size: 40px;
+  line-height: 46px;
+  width: 530px;
+  margin-bottom: 30px;
+}
+.user__header-tags,
+.user__header-description {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 24px;
+}
+.user__header-tags {
+  color: #1a1b22;
+  font-weight: 700;
+}

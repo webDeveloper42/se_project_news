@@ -20,15 +20,58 @@
   line-height: 20px;
   letter-spacing: 0;
 }
-
+.header__links {
+  display: flex;
+  align-items: center;
+}
 .header__home-btn {
-  width: 68px;
+  width: 43px;
   font-family: "Roboto";
-  padding-right: 34px;
+  margin-right: 76px;
+  cursor: pointer;
 }
 .header__signin-btn {
   font-family: "Roboto";
   border: 1px solid #d1d2d6;
   color: #ffffff;
   background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+}
+.header__logout-icon {
+  width: 20px;
+  height: 20px;
+}
+.header__signin-btn--logged-in {
+  width: fit-content;
+  padding: 0 16px;
+}
+.header__logout-icon-filtered {
+  filter: invert(1);
+}
+.header__content--dark {
+  color: #1a1b22;
+}
+.header__signin-btn--dark {
+  color: #1a1b22;
+  border-color: #1a1b22;
+}
+.header__signin-btn--dark .header__logout-icon {
+  filter: none;
+}
+.header__saved-article-btn {
+  font-family: "Roboto";
+  margin-right: 64px;
+  border: none;
+  background-color: transparent;
+  color: #b6bcbf;
+}
+.header__header-user {
+  border-bottom: 1px solid #d1d2d6;
+}
+.header__saved-article-btn-user {
+  color: #1a1b22;
 }

@@ -1,17 +1,30 @@
 import "./CardSection.css";
 import BookmarkDefault from "../../assets/bookmark.svg";
+import BookmarkHover from "../../assets/bookmark-hover.svg";
 import Dog from "../../assets/dog.png";
 import Winter from "../../assets/winter.png";
 import Mountain from "../../assets/mountain.png";
+import { useState } from "react";
 function CardSection() {
+  const [hoveredCard, setHoveredCard] = useState(null);
   return (
     <div className="cards">
       <div className="cards__content">
         <div className="cards__list">
           <div className="cards__card">
             <div className="cards__header">
-              <div className="cards__bookmark">
-                <img src={BookmarkDefault} alt="" />
+              <div
+                onMouseEnter={() => setHoveredCard(0)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className="cards__bookmark"
+              >
+                <img
+                  src={hoveredCard === 0 ? BookmarkHover : BookmarkDefault}
+                  alt="Book Mark Icon"
+                />
+              </div>
+              <div className="cards__header-confirm-save">
+                Sign in to save articles
               </div>
               <img src={Dog} alt="" className="cards__img" />
             </div>
@@ -33,8 +46,18 @@ function CardSection() {
           </div>
           <div className="cards__card">
             <div className="cards__header">
-              <div className="cards__bookmark">
-                <img src={BookmarkDefault} alt="" />
+              <div
+                onMouseEnter={() => setHoveredCard(1)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className="cards__bookmark"
+              >
+                <img
+                  src={hoveredCard === 1 ? BookmarkHover : BookmarkDefault}
+                  alt="Book Mark Icon"
+                />
+              </div>
+              <div className="cards__header-confirm-save">
+                Sign in to save articles
               </div>
               <img src={Mountain} alt="" className="cards__img" />
             </div>
@@ -54,8 +77,18 @@ function CardSection() {
           </div>
           <div className="cards__card">
             <div className="cards__header">
-              <div className="cards__bookmark">
-                <img src={BookmarkDefault} alt="" />
+              <div
+                onMouseEnter={() => setHoveredCard(2)}
+                onMouseLeave={() => setHoveredCard(null)}
+                className="cards__bookmark"
+              >
+                <img
+                  src={hoveredCard === 2 ? BookmarkHover : BookmarkDefault}
+                  alt="Book Mark Icon"
+                />
+              </div>
+              <div className="cards__header-confirm-save">
+                Sign in to save articles
               </div>
               <img src={Winter} alt="" className="cards__img" />
             </div>

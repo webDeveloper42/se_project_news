@@ -22,10 +22,17 @@
 }
 .search__btn-show-more {
   font-family: "Roboto";
+  font-weight: 500;
   width: 288px;
   height: 64px;
   border: none;
   border-radius: 80px;
+  color: #1a1b22;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.search__btn-show-more:hover {
   color: #1a1b22;
   background-color: #e8e8e8;
 }

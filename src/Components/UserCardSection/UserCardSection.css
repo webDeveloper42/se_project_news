@@ -1,22 +1,39 @@
-.cards {
-  height: 580px;
+.user-cards__card-section {
+  background-color: #f5f6f7;
+  padding: 62px 0;
 }
-.cards__list {
-  display: flex;
-  gap: 16px;
-}
-.cards__content {
+.user-cards__content {
   display: flex;
   justify-content: center;
 }
-.cards__card {
+.user-cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  width: 1248px;
+}
+.user-cards__card {
   background-color: #ffffff;
   width: 400px;
   height: 596px;
   position: relative;
   border-radius: 20px;
 }
-.cards__bookmark {
+.user-cards__header-tag {
+  position: absolute;
+  top: 25px;
+  left: 40px;
+  background-color: #ffffff;
+  height: 40px;
+  border-radius: 10px;
+  padding: 0 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.user-cards__bookmark {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -30,34 +47,40 @@
   z-index: 1;
   cursor: pointer;
 }
-.cards__header-confirm-save {
+.user-cards__header-confirm-delete {
   position: absolute;
   top: 25px;
   right: 70px;
   background-color: #ffffff;
   height: 40px;
   border-radius: 10px;
-  padding: 0 15px;
+  width: 156px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
   visibility: hidden;
-  white-space: nowrap;
 }
-.cards__bookmark:hover ~ .cards__header-confirm-save {
+.user-cards__bookmark:hover ~ .user-cards__header-confirm-delete {
   visibility: visible;
 }
-.cards__img {
+.user-cards__img {
   width: 400px;
   height: 272px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.cards__texts-content {
+.user-cards__texts-content {
   padding: 20px 24px 24px;
 }
-.cards__date {
+.user-cards__header-tag {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  max-width: 120px;
+}
+.user-cards__date {
   font-family: "Roboto";
   font-size: 18px;
   line-height: 24px;
@@ -65,14 +88,14 @@
   margin-top: 20px;
   margin-bottom: 12px;
 }
-.cards__title {
+.user-cards__title {
   font-family: "Roboto Slab";
   width: 352px;
   font-size: 26px;
   line-height: 30px;
   color: #1a1b22;
 }
-.cards__description {
+.user-cards__description {
   font-family: "Roboto";
   height: 110px;
   width: 352px;
@@ -82,7 +105,7 @@
   margin-bottom: 18px;
   color: #1a1b22;
 }
-.cards__footer-text {
+.user-cards__footer-text {
   font-family: "Roboto Slab";
   width: 352px;
   font-size: 16px;

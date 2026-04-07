@@ -1,22 +1,36 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { useState } from "react";
 import "../../vendor/normalize.css";
 import "../../vendor/fonts.css";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
+import User from "../User/User";
+import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
 function App() {
+  const { pathname } = useLocation();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const username = "Raymond";
+
+  function handleAuthClick() {
+    setIsLoggedIn(!isLoggedIn);
+  }
+
   return (
-    <div className="page">
-      <div className="page__content">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Main />} />
-        </Routes>
-        <Footer />
+    <CurrentUserContext.Provider value={{ isLoggedIn, username, handleAuthClick }}>
+      <div className="page">
+        <div className="page__content">
+          <Header isDark={pathname === "/user"} />
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/user" element={<User />} />
+          </Routes>
+          <Footer />
+        </div>
       </div>
-    </div>
+    </CurrentUserContext.Provider>
   );
 }
 

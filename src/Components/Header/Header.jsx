@@ -1,9 +1,15 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
-function Header() {
+import { useContext } from "react";
+import Logout from "../../assets/logout.svg";
+import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
+function Header({ isDark }) {
+  const { isLoggedIn, username, handleAuthClick } = useContext(CurrentUserContext);
   return (
-    <header className=" nav header">
-      <div className="header__content">
+    <header className={`nav header ${isDark ? "header__header-user" : ""}`}>
+      <div
+        className={`header__content ${isDark ? "header__content--dark" : ""}`}
+      >
         <div className="header__logo">
           <div className="h1">NewsExplorer</div>
         </div>
@@ -11,8 +17,24 @@ function Header() {
           <Link to={"/"} className="link header__home-btn">
             Home
           </Link>
-          {/* <button className="header__saved-article-btn">Saved articles</button> */}
-          <button className="btn header__signin-btn">Sign In</button>
+          {isLoggedIn && <button className={`header__saved-article-btn link ${isDark ? "header__saved-article-btn-user" : ""}`}>Saved articles</button>}
+          <button
+            onClick={handleAuthClick}
+            className={`btn header__signin-btn ${isDark ? "header__signin-btn--dark" : ""} ${isLoggedIn ? "header__signin-btn--logged-in" : ""}`}
+          >
+            {isLoggedIn ? (
+              <>
+                {username}
+                <img
+                  src={Logout}
+                  alt="Logout"
+                  className={`header__logout-icon ${!isDark ? "header__logout-icon-filtered" : ""}`}
+                />
+              </>
+            ) : (
+              "Sign In"
+            )}
+          </button>
         </div>
       </div>
     </header>
