@@ -4,20 +4,34 @@ import { useContext } from "react";
 import Logout from "../../assets/logout.svg";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 function Header({ isDark }) {
-  const { isLoggedIn, username, handleAuthClick } = useContext(CurrentUserContext);
+  const { isLoggedIn, username, handleAuthClick } =
+    useContext(CurrentUserContext);
   return (
     <header className={`nav header ${isDark ? "header__header-user" : ""}`}>
       <div
         className={`header__content ${isDark ? "header__content--dark" : ""}`}
       >
         <div className="header__logo">
-          <div className="h1">NewsExplorer</div>
+          <Link to={"/"} className="header__logo-name">
+            NewsExplorer
+          </Link>
         </div>
         <div className="header__links">
-          <Link to={"/"} className="link header__home-btn">
-            Home
-          </Link>
-          {isLoggedIn && <button className={`header__saved-article-btn link ${isDark ? "header__saved-article-btn-user" : ""}`}>Saved articles</button>}
+          <div className={`header__home-btn ${!isDark ? "header__home-btn-active" : ""}`}>
+            <Link to={"/"} className="link header__home-btn-text">
+              Home
+            </Link>
+          </div>
+          {isLoggedIn && (
+            <div className="header__saved-article-btn">
+              <Link
+                to="/user"
+                className={`header__saved-article-btn-text link ${isDark ? "header__saved-article-btn-user header__saved-article-btn-active" : ""}`}
+              >
+                Saved articles
+              </Link>
+            </div>
+          )}
           <button
             onClick={handleAuthClick}
             className={`btn header__signin-btn ${isDark ? "header__signin-btn--dark" : ""} ${isLoggedIn ? "header__signin-btn--logged-in" : ""}`}
