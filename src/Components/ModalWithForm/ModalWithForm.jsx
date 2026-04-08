@@ -7,7 +7,7 @@ import ExitBtn from "../../assets/exitbtn.svg";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
 function ModalWithForm() {
-  const { activeModal, openModal, closeModal } = useContext(CurrentUserContext);
+  const { activeModal, closeModal } = useContext(CurrentUserContext);
   const isOpen = activeModal !== null;
 
   useEffect(() => {
@@ -35,18 +35,9 @@ function ModalWithForm() {
           <img src={ExitBtn} alt="Exit button icon" />
         </div>
         <div className="modal__form">
-          {activeModal === "signin" && (
-            <SignInForm onSwitchToSignUp={() => openModal("signup")} />
-          )}
-          {activeModal === "signup" && (
-            <SignUpForm
-              onSwitchToSignIn={() => openModal("signin")}
-              onSignUpComplete={() => openModal("complete")}
-            />
-          )}
-          {activeModal === "complete" && (
-            <CompleteForm onSwitchToSignIn={() => openModal("signin")} />
-          )}
+          {activeModal === "signin" && <SignInForm />}
+          {activeModal === "signup" && <SignUpForm />}
+          {activeModal === "complete" && <CompleteForm />}
         </div>
       </div>
     </div>

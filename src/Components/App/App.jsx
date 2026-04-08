@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import "../../vendor/normalize.css";
 import "../../vendor/fonts.css";
@@ -11,8 +11,8 @@ import User from "../User/User";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
 function App() {
-  const { pathname } = useLocation();
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(pathname === "/user");
   const [activeModal, setActiveModal] = useState(null);
   const username = "Raymond";
@@ -36,7 +36,7 @@ function App() {
     >
       <div className="page">
         <div className="page__content">
-          <Header isDark={pathname === "/user"} />
+          <Header />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/user" element={<User />} />

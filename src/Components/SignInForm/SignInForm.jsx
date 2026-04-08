@@ -1,8 +1,10 @@
 import "./SignInForm.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { getEmailError, getPasswordError } from "../../utils/validation";
+import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
-function SignInForm({ onSwitchToSignUp }) {
+function SignInForm() {
+  const { openModal } = useContext(CurrentUserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailTouched, setEmailTouched] = useState(false);
@@ -64,7 +66,7 @@ function SignInForm({ onSwitchToSignUp }) {
           </div>
           <div className="signin__switch-btn-container">
             or{" "}
-            <button type="button" className="signin__switcher-btn" onClick={onSwitchToSignUp}>
+            <button type="button" className="signin__switcher-btn" onClick={() => openModal("signup")}>
               Sign Up
             </button>
           </div>

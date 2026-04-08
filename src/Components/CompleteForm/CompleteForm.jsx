@@ -1,6 +1,9 @@
 import "./CompleteForm.css";
+import { useContext } from "react";
+import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
-function CompleteForm({ onSwitchToSignIn }) {
+function CompleteForm() {
+  const { openModal } = useContext(CurrentUserContext);
   return (
     <form className="complete">
       <div className="complete__content">
@@ -14,7 +17,7 @@ function CompleteForm({ onSwitchToSignIn }) {
             <button
               type="button"
               className="complete__switcher-btn"
-              onClick={onSwitchToSignIn}
+              onClick={() => openModal("signin")}
             >
               Sign in
             </button>

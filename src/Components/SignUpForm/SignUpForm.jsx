@@ -1,8 +1,10 @@
 import "./SignUpForm.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { getEmailError, getPasswordError, getUsernameError } from "../../utils/validation";
+import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
-function SignUpForm({ onSwitchToSignIn, onSignUpComplete }) {
+function SignUpForm() {
+  const { openModal } = useContext(CurrentUserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
@@ -81,14 +83,14 @@ function SignUpForm({ onSwitchToSignIn, onSignUpComplete }) {
               type="button"
               className={`signup__submit-btn ${isValid ? "signup__submit-btn-active" : ""}`}
               disabled={!isValid}
-              onClick={isValid ? onSignUpComplete : undefined}
+              onClick={isValid ? () => openModal("complete") : undefined}
             >
               Sign Up
             </button>
           </div>
           <div className="signup__switch-btn-container">
             or{" "}
-            <button type="button" className="signup__switcher-btn" onClick={onSwitchToSignIn}>
+            <button type="button" className="signup__switcher-btn" onClick={() => openModal("signin")}>
               Sign In
             </button>
           </div>

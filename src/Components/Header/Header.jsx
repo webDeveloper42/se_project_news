@@ -1,11 +1,13 @@
 import "./Header.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import Logout from "../../assets/logout.svg";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
-function Header({ isDark }) {
+function Header() {
   const { isLoggedIn, username, handleAuthClick, openModal } =
     useContext(CurrentUserContext);
+  const { pathname } = useLocation();
+  const isDark = pathname === "/user";
   return (
     <header className={`nav header ${isDark ? "header__header-user" : ""}`}>
       <div
