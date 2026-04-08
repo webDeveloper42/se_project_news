@@ -1,6 +1,6 @@
 import "./SignUpForm.css";
 
-function SignUpForm() {
+function SignUpForm({ onSwitchToSignIn, onSignUpComplete }) {
   return (
     <form className="signup">
       <div className="signup__content">
@@ -38,10 +38,10 @@ function SignUpForm() {
         </div>
         <div className="signup__btns-container">
           <div className="signup__submit-btn-container ">
-            <button className="signup__submit-btn">Sign Up</button>
+            <button type="button" className="signup__submit-btn" onClick={onSignUpComplete}>Sign Up</button>
           </div>
           <div className="signup__switch-btn-container">
-            or <button className="signup__switcher-btn">Sign In</button>
+            or <button type="button" className="signup__switcher-btn" onClick={onSwitchToSignIn}>Sign In</button>
           </div>
         </div>
       </div>

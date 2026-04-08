@@ -1,6 +1,6 @@
 import "./SignInForm.css";
 
-function SignInForm() {
+function SignInForm({ onSwitchToSignUp }) {
   return (
     <form className="signin">
       <div className="signin__content">
@@ -32,7 +32,7 @@ function SignInForm() {
             <button className="signin__submit-btn">Sign in</button>
           </div>
           <div className="signin__switch-btn-container">
-            or <button className="signin__switcher-btn">Sign Up</button>
+            or <button type="button" className="signin__switcher-btn" onClick={onSwitchToSignUp}>Sign Up</button>
           </div>
         </div>
       </div>

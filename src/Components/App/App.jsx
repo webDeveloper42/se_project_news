@@ -13,15 +13,24 @@ import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 function App() {
   const { pathname } = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [activeModal, setActiveModal] = useState(null);
   const username = "Raymond";
 
   function handleAuthClick() {
     setIsLoggedIn(!isLoggedIn);
   }
 
+  function openModal(modal) {
+    setActiveModal(modal);
+  }
+
+  function closeModal() {
+    setActiveModal(null);
+  }
+
   return (
     <CurrentUserContext.Provider
-      value={{ isLoggedIn, username, handleAuthClick }}
+      value={{ isLoggedIn, username, handleAuthClick, activeModal, openModal, closeModal }}
     >
       <div className="page">
         <div className="page__content">

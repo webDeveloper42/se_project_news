@@ -1,4 +1,4 @@
-.signin {
+.complete {
   padding: 36px 34px;
   width: 430px;
   height: 130px;
@@ -8,7 +8,7 @@
   border-radius: 16px;
   z-index: 1;
 }
-.signin__title {
+.complete__title {
   font-family: "Roboto";
   font-weight: 900;
   color: #1a1b22;
@@ -17,10 +17,10 @@
   margin-bottom: 22px;
 }
 
-.signin__switch-btn-container {
+.complete__switch-btn-container {
   margin-top: 16px;
 }
-.signin__switcher-btn {
+.complete__switcher-btn {
   border: none;
   font-family: "Roboto";
   background-color: transparent;

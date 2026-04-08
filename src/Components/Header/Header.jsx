@@ -4,7 +4,7 @@ import { useContext } from "react";
 import Logout from "../../assets/logout.svg";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 function Header({ isDark }) {
-  const { isLoggedIn, username, handleAuthClick } =
+  const { isLoggedIn, username, handleAuthClick, openModal } =
     useContext(CurrentUserContext);
   return (
     <header className={`nav header ${isDark ? "header__header-user" : ""}`}>
@@ -33,7 +33,7 @@ function Header({ isDark }) {
             </div>
           )}
           <button
-            onClick={handleAuthClick}
+            onClick={isLoggedIn ? handleAuthClick : () => openModal("signin")}
             className={`btn header__signin-btn ${isDark ? "header__signin-btn--dark" : ""} ${isLoggedIn ? "header__signin-btn--logged-in" : ""}`}
           >
             {isLoggedIn ? (

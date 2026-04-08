@@ -1,17 +1,23 @@
 import "./CompleteForm.css";
 
-function CompleteForm() {
+function CompleteForm({ onSwitchToSignIn }) {
   return (
-    <form className="signin">
-      <div className="signin__content">
-        <div className="signin__header">
-          <div className="signin__title">
+    <form className="complete">
+      <div className="complete__content">
+        <div className="complete__header">
+          <div className="complete__title">
             Registration successfully <br /> completed!
           </div>
         </div>
-        <div className="signin__btns-container">
-          <div className="signin__switch-btn">
-            <button className="signin__switcher-btn">Sign in</button>
+        <div className="complete__btns-container">
+          <div className="complete__switch-btn">
+            <button
+              type="button"
+              className="complete__switcher-btn"
+              onClick={onSwitchToSignIn}
+            >
+              Sign in
+            </button>
           </div>
         </div>
       </div>
