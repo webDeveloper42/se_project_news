@@ -14,12 +14,13 @@ function Author() {
         <div className="author__text-content">
           <div className="author__title">About the author</div>
           <div className="author__description">
-            This block describes the project author. Here you should indicate
-            your name, what you do, and which development technologies you know.
+            My name is Raymond. I'm a Software Engineer with knowledge of the
+            MERN stack. I also am familiar with python, and google cloud.
             <br />
-            <br />
-            You can also talk about your experience with TripleTen, what you
-            learned there, and how you can help potential customers.
+            <br />I had a long journey through TripleTen bootcamp, however it
+            proved how resilient, disciplined and consistent I am. If that
+            sounds like someone you need in your company, shoot me a dm in
+            linkedin which can be found in the footer.
           </div>
         </div>
       </div>

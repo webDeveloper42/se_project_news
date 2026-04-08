@@ -20,10 +20,14 @@ function Footer() {
         >
           Tripleten
         </a>
-        <a href="https://github.com" target="_blank" className="footer__github">
+        <a
+          href="https://github.com/webDeveloper42"
+          target="_blank"
+          className="footer__github"
+        >
           <img src={Github} alt="Link to Github" />
         </a>
-        <a href="https://linkedin.com" target="_blank">
+        <a href="https://www.linkedin.com/in/raymondintech/" target="_blank">
           <img
             src={Linkedin}
             alt="Link to Linkedin"
