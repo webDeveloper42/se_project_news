@@ -23,10 +23,10 @@ function Header({ isDark }) {
             </Link>
           </div>
           {isLoggedIn && (
-            <div className="header__saved-article-btn">
+            <div className={`header__saved-article-btn ${isDark ? "header__saved-article-btn-active" : ""}`}>
               <Link
                 to="/user"
-                className={`header__saved-article-btn-text link ${isDark ? "header__saved-article-btn-user header__saved-article-btn-active" : ""}`}
+                className={`header__saved-article-btn-text link ${isDark ? "header__saved-article-btn-user" : ""}`}
               >
                 Saved articles
               </Link>
