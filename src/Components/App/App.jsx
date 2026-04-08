@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../../vendor/normalize.css";
 import "../../vendor/fonts.css";
@@ -12,12 +12,14 @@ import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
 function App() {
   const { pathname } = useLocation();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(pathname === "/user");
   const [activeModal, setActiveModal] = useState(null);
   const username = "Raymond";
 
   function handleAuthClick() {
-    setIsLoggedIn(!isLoggedIn);
+    setIsLoggedIn(false);
+    navigate("/");
   }
 
   function openModal(modal) {
