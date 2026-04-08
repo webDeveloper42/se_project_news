@@ -1,0 +1,75 @@
+.signin {
+  padding: 36px 34px;
+  width: 430px;
+  height: 380px;
+  opacity: 1;
+  border-width: 1px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.signin__title {
+  font-family: "Roboto";
+  font-weight: 900;
+  color: #1a1b22;
+  font-size: 24px;
+  line-height: 100%;
+  margin-bottom: 22px;
+}
+.signin__form-data {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+.signin__label {
+  color: #2f71e5;
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.signin__input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  font-family: "Roboto";
+  width: 100%;
+  outline: none;
+}
+.signin__btns-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 39px;
+  width: 100%;
+}
+.signin__submit-btn {
+  font-family: "Roboto";
+  border: none;
+  width: 358px;
+  height: 64px;
+  border-radius: 100px;
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  cursor: pointer;
+}
+.signin__submit-btn-active {
+  background-color: #2f71e5;
+  color: #ffffff;
+}
+.signin__submit-btn-hover {
+  background-color: #347eff;
+  color: #ffffff;
+}
+.signin__switch-btn-container {
+  margin-top: 16px;
+  font-family: "Roboto";
+}
+.signin__switcher-btn {
+  border: none;
+  background-color: transparent;
+  color: #2f71e5;
+  cursor: pointer;
+}

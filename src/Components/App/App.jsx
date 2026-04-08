@@ -5,6 +5,7 @@ import "../../vendor/fonts.css";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import Footer from "../Footer/Footer";
 import User from "../User/User";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
@@ -19,7 +20,9 @@ function App() {
   }
 
   return (
-    <CurrentUserContext.Provider value={{ isLoggedIn, username, handleAuthClick }}>
+    <CurrentUserContext.Provider
+      value={{ isLoggedIn, username, handleAuthClick }}
+    >
       <div className="page">
         <div className="page__content">
           <Header isDark={pathname === "/user"} />
@@ -29,6 +32,7 @@ function App() {
           </Routes>
           <Footer />
         </div>
+        <ModalWithForm />
       </div>
     </CurrentUserContext.Provider>
   );
