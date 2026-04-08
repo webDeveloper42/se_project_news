@@ -59,9 +59,19 @@
   background-color: #2f71e5;
   color: #ffffff;
 }
-.signin__submit-btn-hover {
+.signin__submit-btn.signin__submit-btn-active:hover {
   background-color: #347eff;
   color: #ffffff;
+}
+.signin__error {
+  display: none;
+  color: #ff0000;
+  font-family: "Roboto";
+  font-size: 12px;
+  margin-top: 4px;
+}
+.signin__error--visible {
+  display: block;
 }
 .signin__switch-btn-container {
   margin-top: 16px;
