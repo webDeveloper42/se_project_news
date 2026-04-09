@@ -153,7 +153,6 @@
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
   }
-  /* Dropdown top bar: logo + exit btn */
   .header__mobile-top {
     position: relative;
     z-index: 2;
@@ -172,7 +171,6 @@
     font-size: 20px;
     text-decoration: none;
   }
-  /* X icon is white on dark dropdown background */
   .header__mobile-exit {
     position: static;
     background: transparent;
