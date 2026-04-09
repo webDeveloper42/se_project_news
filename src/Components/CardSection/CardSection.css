@@ -9,3 +9,9 @@
   display: flex;
   gap: 16px;
 }
+@media screen and (max-width: 768px) {
+  .cards {
+    padding: 0 40px;
+    height: 475px;
+  }
+}

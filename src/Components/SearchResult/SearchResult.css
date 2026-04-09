@@ -36,3 +36,13 @@
   color: #1a1b22;
   background-color: #e8e8e8;
 }
+
+@media screen and (max-width: 768px) {
+  .search {
+    padding: 0 40px;
+    height: 780px;
+  }
+  .search__btn-container {
+    margin-top: 0;
+  }
+}

@@ -43,3 +43,19 @@
   color: #ffffff;
   object-fit: cover;
 }
+@media screen and (max-width: 768px) {
+  .author__img {
+    width: 232px;
+    height: 232px;
+  }
+  .author__text-content {
+    padding-top: 214px;
+  }
+  .author__title {
+    font-style: 30px;
+  }
+  .author__description {
+    width: 424px;
+    height: 168px;
+  }
+}

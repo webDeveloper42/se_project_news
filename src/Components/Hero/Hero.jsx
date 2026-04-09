@@ -5,12 +5,9 @@ function Hero() {
     <div className="hero">
       <img className="hero__img" src={HeroPNG} alt="Hero Picture" />
       <div className="hero__content">
-        <div className="hero__title">
-          What's going on in <br /> the world?
-        </div>
+        <div className="hero__title">What's going on in the world?</div>
         <div className="hero__description">
           Find the latest news on any topic and save them in your personal
-          <br />
           account.
         </div>
         <div className="hero__searchbar">

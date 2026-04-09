@@ -104,3 +104,35 @@
   font-weight: 700;
   color: #b6bcbf;
 }
+@media screen and (max-width: 768px) {
+  .card {
+    width: 224px;
+    height: 420px;
+  }
+  .card__img {
+    width: 224px;
+    height: 150px;
+  }
+  .card__date {
+    margin-top: 0;
+    width: 147px;
+  }
+  .card__title {
+    width: 192px;
+    height: 72px;
+  }
+  .card__description {
+    width: 192px;
+    height: 88px;
+
+    overflow: hidden;
+  }
+  .card__footer-text {
+    width: 134px;
+    overflow: hidden;
+  }
+  .card__action-btn {
+    top: 13px;
+    right: 13px;
+  }
+}

@@ -15,8 +15,7 @@ function Author() {
           <div className="author__title">About the author</div>
           <div className="author__description">
             My name is Raymond. I'm a Software Engineer with knowledge of the
-            MERN stack. I also am familiar with python, and google cloud.
-            <br />
+            MERN stack. I also am familiar with python, and google cloud. <br />
             <br />I had a long journey through TripleTen bootcamp, however it
             proved how resilient, disciplined and consistent I am. If that
             sounds like someone you need in your company, shoot me a dm in

@@ -103,3 +103,9 @@
 .header__saved-article-btn-user {
   color: #1a1b22;
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    z-index: 1;
+  }
+}

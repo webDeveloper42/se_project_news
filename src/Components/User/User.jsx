@@ -8,7 +8,7 @@ function User() {
         <div className="user__header-text">
           <div className="user__header-top">Saved articles</div>
           <div className="user__header-title">
-            Raymond, you have 5 saved <br /> articles
+            Raymond, you have 5 saved articles
           </div>
           <div className="user__header-description">
             By keywords:{" "}

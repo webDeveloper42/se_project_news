@@ -7,7 +7,7 @@ function NoResults() {
         <img className="no-results__img" src={NotFound} />
         <div className="no-results__title">Nothing Found</div>
         <div className="no-results__text">
-          Sorry, but nothing matched <br /> your search terms.
+          Sorry, but nothing matched your search terms.
         </div>
       </div>
     </div>

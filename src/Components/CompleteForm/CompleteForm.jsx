@@ -9,7 +9,7 @@ function CompleteForm() {
       <div className="complete__content">
         <div className="complete__header">
           <div className="complete__title">
-            Registration successfully <br /> completed!
+            Registration successfully completed!
           </div>
         </div>
         <div className="complete__btns-container">
