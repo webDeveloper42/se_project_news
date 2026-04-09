@@ -42,7 +42,11 @@
   .search__btn-container {
     margin-top: 0;
   }
+  .search__btn-show-more:hover {
+    background-color: #ffffff;
+  }
 }
+
 @media screen and (max-width: 320px) {
   .search {
     height: auto;
