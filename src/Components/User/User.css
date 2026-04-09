@@ -45,15 +45,18 @@
 }
 
 @media screen and (max-width: 768px) {
-  .user__header-text {
+  .user-cards__content {
     padding-left: 40px;
   }
-  .user-cards__content {
+  .user__header-text {
     padding-left: 40px;
   }
 }
 
 @media screen and (max-width: 320px) {
+  .user-cards__content {
+    padding-left: 20px;
+  }
   .user__header-text {
     padding-left: 25px;
   }
