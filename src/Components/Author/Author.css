@@ -63,6 +63,9 @@
   .author {
     height: 752px;
   }
+  .author__content {
+    margin-top: 20px;
+  }
   .author__img {
     width: 272px;
     height: 272px;

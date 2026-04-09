@@ -42,6 +42,7 @@
     margin-right: 0;
   }
   .footer__tripleten-btn {
+    margin-top: 20px;
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     margin-right: 0;
@@ -54,6 +55,7 @@
     gap: 16px;
   }
   .footer__copyright {
+    margin-top: 38px;
     width: 288px;
     grid-column: 1 / -1;
     grid-row: 3 / 4;
