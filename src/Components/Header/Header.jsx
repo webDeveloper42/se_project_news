@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <header
-      className={`nav header  ${isDark ? "header__header-user" : ""} ${menuOpen ? "header--menu-open" : ""}`}
+      className={`nav header ${isDark ? "header--user" : ""} ${menuOpen ? "header--menu-open" : ""}`}
     >
       <div
         className={`header__content ${isDark ? "header__content--dark" : ""}`}
@@ -43,7 +43,7 @@ function Header() {
               onClick={() => setMenuOpen(false)}
             >
               <img
-                className="header__exit--light"
+                className="header__mobile-exit--light"
                 src={ExitBtn}
                 alt="Exit button icon"
               />
@@ -71,7 +71,7 @@ function Header() {
                 setMenuOpen(false);
                 isLoggedIn ? handleAuthClick() : openModal("signin");
               }}
-              className={`btn header__signin-btn header__mobile-signin ${isLoggedIn ? "header__signin-btn--logged-in" : ""}`}
+              className={`btn header__signin-btn header__signin-btn--mobile ${isLoggedIn ? "header__signin-btn--logged-in" : ""}`}
             >
               {isLoggedIn ? (
                 <>
@@ -79,7 +79,7 @@ function Header() {
                   <img
                     src={Logout}
                     alt="Logout"
-                    className="header__logout-icon header__logout-icon-filtered"
+                    className="header__logout-icon header__logout-icon--filtered"
                   />
                 </>
               ) : (
@@ -94,19 +94,19 @@ function Header() {
         </div>
         <div className="header__links">
           <div
-            className={`header__home-btn ${!isDark ? "header__home-btn-active" : ""}`}
+            className={`header__home-btn ${!isDark ? "header__home-btn--active" : ""}`}
           >
-            <Link to={"/"} className="link header__home-btn-text">
+            <Link to={"/"} className="link header__home-btn-label">
               Home
             </Link>
           </div>
           {isLoggedIn && (
             <div
-              className={`header__saved-article-btn ${isDark ? "header__saved-article-btn-active" : ""}`}
+              className={`header__saved-article-btn ${isDark ? "header__saved-article-btn--active" : ""}`}
             >
               <Link
                 to="/user"
-                className={`header__saved-article-btn-text link ${isDark ? "header__saved-article-btn-user" : ""}`}
+                className={`header__saved-article-btn-label link ${isDark ? "header__saved-article-btn--user" : ""}`}
               >
                 Saved articles
               </Link>
@@ -122,7 +122,7 @@ function Header() {
                 <img
                   src={Logout}
                   alt="Logout"
-                  className={`header__logout-icon ${!isDark ? "header__logout-icon-filtered" : ""}`}
+                  className={`header__logout-icon ${!isDark ? "header__logout-icon--filtered" : ""}`}
                 />
               </>
             ) : (
