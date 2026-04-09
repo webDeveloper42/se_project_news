@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "../../vendor/normalize.css";
 import "../../vendor/fonts.css";
@@ -12,19 +12,36 @@ import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
 function App() {
   const navigate = useNavigate();
-  const { pathname } = useLocation();
-  const [isLoggedIn, setIsLoggedIn] = useState(pathname === "/user");
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    () => !!localStorage.getItem("token")
+  );
   const [activeModal, setActiveModal] = useState(null);
-  const [savedCards, setSavedCards] = useState([]);
+  const [savedCards, setSavedCards] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("savedCards")) || [];
+    } catch {
+      return [];
+    }
+  });
   const username = "Raymond";
 
   function toggleSaveCard(cardId) {
-    setSavedCards((prev) =>
-      prev.includes(cardId) ? prev.filter((id) => id !== cardId) : [...prev, cardId]
-    );
+    setSavedCards((prev) => {
+      const next = prev.includes(cardId)
+        ? prev.filter((id) => id !== cardId)
+        : [...prev, cardId];
+      localStorage.setItem("savedCards", JSON.stringify(next));
+      return next;
+    });
+  }
+
+  function handleLogin() {
+    localStorage.setItem("token", "fake-token");
+    setIsLoggedIn(true);
   }
 
   function handleAuthClick() {
+    localStorage.removeItem("token");
     setIsLoggedIn(false);
     navigate("/");
   }
@@ -39,7 +56,17 @@ function App() {
 
   return (
     <CurrentUserContext.Provider
-      value={{ isLoggedIn, username, handleAuthClick, activeModal, openModal, closeModal, savedCards, toggleSaveCard }}
+      value={{
+        isLoggedIn,
+        username,
+        handleLogin,
+        handleAuthClick,
+        activeModal,
+        openModal,
+        closeModal,
+        savedCards,
+        toggleSaveCard,
+      }}
     >
       <div className="page">
         <div className="page__content">

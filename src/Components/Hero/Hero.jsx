@@ -4,8 +4,14 @@ import { useState } from "react";
 
 function Hero({ onSearch }) {
   const [query, setQuery] = useState("");
+  const [inputError, setInputError] = useState("");
 
   function handleSearch() {
+    if (!query.trim()) {
+      setInputError("Please enter a keyword");
+      return;
+    }
+    setInputError("");
     onSearch(query);
   }
 
@@ -35,6 +41,9 @@ function Hero({ onSearch }) {
             Search
           </button>
         </div>
+        {inputError && (
+          <span className="hero__searchbar-error">{inputError}</span>
+        )}
       </div>
     </div>
   );

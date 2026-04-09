@@ -4,7 +4,7 @@ import { getEmailError, getPasswordError } from "../../utils/validation";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
 function SignInForm() {
-  const { openModal } = useContext(CurrentUserContext);
+  const { openModal, handleLogin, closeModal } = useContext(CurrentUserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailTouched, setEmailTouched] = useState(false);
@@ -14,8 +14,15 @@ function SignInForm() {
   const passwordError = getPasswordError(password);
   const isValid = !emailError && !passwordError && email && password;
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (!isValid) return;
+    handleLogin();
+    closeModal();
+  }
+
   return (
-    <form className="signin">
+    <form className="signin" onSubmit={handleSubmit}>
       <div className="signin__content">
         <div className="signin__header">
           <div className="signin__title">Sign In</div>

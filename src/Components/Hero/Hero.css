@@ -73,6 +73,13 @@
 .hero__searchbar-btn:hover {
   background-color: #347eff;
 }
+.hero__searchbar-error {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #ff6f6f;
+  margin-top: 8px;
+  display: block;
+}
 @media screen and (max-width: 768px) {
   .hero__content {
     padding-left: 80px;
