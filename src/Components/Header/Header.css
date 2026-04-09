@@ -200,6 +200,7 @@
     color: #ffffff;
     border-color: #ffffff;
     align-self: flex-start;
+    width: 100%;
   }
   .header__menu--dark-user {
     filter: invert(1);
