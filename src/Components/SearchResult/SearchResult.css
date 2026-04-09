@@ -1,8 +1,6 @@
 .search {
-  height: 974px;
   background-color: #f5f6f7;
-  padding-left: 104px;
-  padding-right: 104px;
+  padding: 0 104px 80px;
 }
 
 .search__title {
@@ -39,8 +37,7 @@
 
 @media screen and (max-width: 768px) {
   .search {
-    padding: 0 40px;
-    height: 780px;
+    padding: 0 40px 60px;
   }
   .search__btn-container {
     margin-top: 0;

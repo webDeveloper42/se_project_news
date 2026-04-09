@@ -1,5 +1,5 @@
 .cards {
-  height: 580px;
+  width: 100%;
 }
 .cards__content {
   display: flex;
@@ -7,21 +7,22 @@
 }
 .cards__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 @media screen and (max-width: 768px) {
   .cards {
-    padding: 0 40px;
-    height: 475px;
+    margin-bottom: 20px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .cards {
-    height: auto;
-    padding: 0;
+    padding: 0 16px;
   }
   .cards__list {
     flex-direction: column;
+    align-items: center;
   }
 }
