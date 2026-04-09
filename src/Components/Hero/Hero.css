@@ -97,3 +97,36 @@
     height: 60px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .hero__content {
+    padding-left: 0;
+  }
+  .hero__title {
+    width: 285px;
+    height: 80px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  .hero__img {
+    height: 500px;
+  }
+  .hero__description {
+    padding-left: 20px;
+    width: 288px;
+    height: 72px;
+    margin-bottom: 50px;
+  }
+  .hero__searchbar {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+  }
+  .hero__searchbar-input {
+    width: 288px;
+  }
+  .hero__searchbar-btn {
+    position: static;
+    width: 100%;
+  }
+}
