@@ -60,7 +60,28 @@
   }
 }
 @media screen and (max-width: 320px) {
+  .author {
+    height: 752px;
+  }
+  .author__img {
+    width: 272px;
+    height: 272px;
+  }
   .author__content {
     flex-direction: column;
+  }
+  .author__text-content {
+    padding: 0;
+    padding-left: 10px;
+  }
+  .author__title {
+    width: 288px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .author__description {
+    width: 288px;
+    height: 240px;
   }
 }

@@ -24,3 +24,9 @@
 .footer__github {
   padding-right: 24px;
 }
+@media screen and (max-width: 320px) {
+  .footer {
+    display: grid;
+    flex-direction: column;
+  }
+}
