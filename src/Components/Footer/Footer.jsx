@@ -20,20 +20,22 @@ function Footer() {
         >
           Tripleten
         </a>
-        <a
-          href="https://github.com/webDeveloper42"
-          target="_blank"
-          className="footer__github"
-        >
-          <img src={Github} alt="Link to Github" />
-        </a>
-        <a href="https://www.linkedin.com/in/raymondintech/" target="_blank">
-          <img
-            src={Linkedin}
-            alt="Link to Linkedin"
-            className="footer__linkedin"
-          />
-        </a>
+        <div className="footer__icons">
+          <a
+            href="https://github.com/webDeveloper42"
+            target="_blank"
+            className="footer__github"
+          >
+            <img src={Github} alt="Link to Github" />
+          </a>
+          <a href="https://www.linkedin.com/in/raymondintech/" target="_blank">
+            <img
+              src={Linkedin}
+              alt="Link to Linkedin"
+              className="footer__linkedin"
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );
