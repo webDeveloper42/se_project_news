@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <header
-      className={`nav header ${isDark ? "header__header-user" : ""} ${menuOpen ? "header--menu-open" : ""}`}
+      className={`nav header  ${isDark ? "header__header-user" : ""} ${menuOpen ? "header--menu-open" : ""}`}
     >
       <div
         className={`header__content ${isDark ? "header__content--dark" : ""}`}
@@ -26,7 +26,7 @@ function Header() {
         </div>
         <button className="header__menu" onClick={() => setMenuOpen(true)}>
           <img
-            className={`header__menu-img ${!isDark ? "header__menu-img--light" : ""}`}
+            className={`header__menu-img ${!isDark ? "header__menu-img--light" : "header__menu-img--dark"}`}
             src={Menu}
             alt="Header menu button"
           />
@@ -43,7 +43,7 @@ function Header() {
               onClick={() => setMenuOpen(false)}
             >
               <img
-                className={!isDark ? "header__exit--light" : ""}
+                className="header__exit--light"
                 src={ExitBtn}
                 alt="Exit button icon"
               />

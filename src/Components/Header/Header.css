@@ -120,13 +120,13 @@
     outline: none;
     cursor: pointer;
   }
-  .header__menu-img--light {
+  .header__menu-img--dark {
     filter: invert(1);
   }
   .header__exit--light {
     filter: invert(1);
   }
-  .header__menu-img--dark {
+  .header__menu-img--light {
     filter: none;
   }
   .header--menu-open {
@@ -200,5 +200,8 @@
     color: #ffffff;
     border-color: #ffffff;
     align-self: flex-start;
+  }
+  .header__menu--dark-user {
+    filter: invert(1);
   }
 }
