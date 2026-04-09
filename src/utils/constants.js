@@ -17,7 +17,7 @@ export const cards = [
   {
     id: 2,
     tag: "Nature",
-    date: "Fe uary 19, 2019",
+    date: "February 19, 2019",
     title: "Nature makes you better",
     description:
       "We all know how good nature can make us feel. We have known it for millennia: the sound of the ocean, the scents of a forest, the way dappled sunlight dances through leaves. из местных чудес природы.",

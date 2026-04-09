@@ -128,8 +128,10 @@
     overflow: hidden;
   }
   .card__footer-text {
-    width: 134px;
+    width: 192px;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   .card__action-btn {
     top: 13px;
