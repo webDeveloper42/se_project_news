@@ -22,7 +22,7 @@ function Card({ card, isUserCard }) {
   }
 
   return (
-    <div className="card">
+    <article className="card">
       <div className="card__header">
         {isUserCard && <div className="card__tag">{card.tag}</div>}
         <div
@@ -42,12 +42,12 @@ function Card({ card, isUserCard }) {
         <img src={card.img} alt={card.imgAlt} className="card__img" />
       </div>
       <div className="card__texts-content">
-        <div className="card__date">{card.date}</div>
-        <div className="card__title">{card.title}</div>
-        <div className="card__description">{card.description}</div>
-        <div className="card__footer-text">{card.source}</div>
+        <time className="card__date">{card.date}</time>
+        <h3 className="card__title">{card.title}</h3>
+        <p className="card__description">{card.description}</p>
+        <p className="card__footer-text">{card.source}</p>
       </div>
-    </div>
+    </article>
   );
 }
 

@@ -23,11 +23,11 @@ function Hero({ onSearch }) {
     <div className="hero">
       <img className="hero__img" src={HeroPNG} alt="Hero Picture" />
       <div className="hero__content">
-        <div className="hero__title">What's going on in the world?</div>
-        <div className="hero__description">
+        <h1 className="hero__title">What's going on in the world?</h1>
+        <p className="hero__description">
           Find the latest news on any topic and save them in your personal
           account.
-        </div>
+        </p>
         <div className="hero__searchbar">
           <input
             type="text"

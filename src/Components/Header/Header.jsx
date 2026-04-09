@@ -9,7 +9,7 @@ function Header() {
   const { isLoggedIn, username, handleAuthClick, openModal, closeModal, activeModal } =
     useContext(CurrentUserContext);
   const { pathname } = useLocation();
-  const isDark = pathname === "/user";
+  const isDark = pathname === "/saved-news";
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -69,7 +69,7 @@ function Header() {
             </Link>
             {isLoggedIn && (
               <Link
-                to="/user"
+                to="/saved-news"
                 className="link header__mobile-link"
                 onClick={() => setMenuOpen(false)}
               >
@@ -115,7 +115,7 @@ function Header() {
               className={`header__saved-article-btn ${isDark ? "header__saved-article-btn--active" : ""}`}
             >
               <Link
-                to="/user"
+                to="/saved-news"
                 className={`header__saved-article-btn-label link ${isDark ? "header__saved-article-btn--user" : ""}`}
               >
                 Saved articles

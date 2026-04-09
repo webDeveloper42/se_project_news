@@ -89,7 +89,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/user" element={<User />} />
+            <Route path="/saved-news" element={<User />} />
           </Routes>
           <Footer />
         </div>

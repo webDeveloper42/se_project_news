@@ -37,6 +37,9 @@
   outline: none;
   margin-top: 9px;
 }
+.signup__input:focus {
+  border-bottom: 2px solid #2f71e5;
+}
 .signup__btns-container {
   display: flex;
   justify-content: center;
@@ -64,10 +67,9 @@
   color: #ffffff;
 }
 .signup__error {
-  font-family: "Inter";
   display: none;
   color: #ff0000;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, sans-serif;
   font-size: 12px;
   margin-top: 2px;
 }

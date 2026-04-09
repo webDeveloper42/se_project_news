@@ -22,14 +22,14 @@ function User() {
     <div className="user">
       <div className="user__content">
         <div className="user__header-text">
-          <div className="user__header-top">Saved articles</div>
-          <div className="user__header-title">
+          <p className="user__header-top">Saved articles</p>
+          <h1 className="user__header-title">
             {username}, you have {count} saved article{count !== 1 ? "s" : ""}
-          </div>
-          <div className="user__header-description">
+          </h1>
+          <p className="user__header-description">
             By keywords:{" "}
             <span className="user__header-tags">{formatTags()}</span>
-          </div>
+          </p>
         </div>
         <UserCardSection />
       </div>

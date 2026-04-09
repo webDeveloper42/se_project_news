@@ -1,3 +1,9 @@
+:root {
+  --font-sans: "Roboto", Arial, Helvetica, sans-serif;
+  --font-slab: "Roboto Slab", Georgia, serif;
+  --font-inter: "Inter", Arial, sans-serif;
+}
+
 @font-face {
   font-family: "Inter";
   src:
