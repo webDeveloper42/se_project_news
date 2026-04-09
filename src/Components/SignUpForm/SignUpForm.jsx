@@ -1,13 +1,20 @@
 import "./SignUpForm.css";
 import { useState, useContext } from "react";
-import { getEmailError, getPasswordError, getUsernameError } from "../../utils/validation";
+import {
+  getEmailError,
+  getPasswordError,
+  getUsernameError,
+} from "../../utils/validation";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
+
+const EXISTING_EMAILS = ["test@test.com", "user@example.com"];
 
 function SignUpForm() {
   const { openModal } = useContext(CurrentUserContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [username, setUsername] = useState("");
+  const [emailTaken, setEmailTaken] = useState(false);
   const [emailTouched, setEmailTouched] = useState(false);
   const [passwordTouched, setPasswordTouched] = useState(false);
   const [usernameTouched, setUsernameTouched] = useState(false);
@@ -15,7 +22,13 @@ function SignUpForm() {
   const emailError = getEmailError(email);
   const passwordError = getPasswordError(password);
   const usernameError = getUsernameError(username);
-  const isValid = !emailError && !passwordError && !usernameError && email && password && username;
+  const isValid =
+    !emailError &&
+    !passwordError &&
+    !usernameError &&
+    email &&
+    password &&
+    username;
   const hasVisibleError =
     (emailTouched && !!emailError) ||
     (passwordTouched && !!passwordError) ||
@@ -37,10 +50,15 @@ function SignUpForm() {
               placeholder="Enter email"
               className="signup__input"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => {
+                setEmail(e.target.value);
+                setEmailTaken(false);
+              }}
               onBlur={() => setEmailTouched(true)}
             />
-            <span className={`signup__error ${emailTouched && emailError ? "signup__error--visible" : ""}`}>
+            <span
+              className={`signup__error ${emailTouched && emailError ? "signup__error--visible" : ""}`}
+            >
               {emailError}
             </span>
           </label>
@@ -56,7 +74,9 @@ function SignUpForm() {
               onChange={(e) => setPassword(e.target.value)}
               onBlur={() => setPasswordTouched(true)}
             />
-            <span className={`signup__error ${passwordTouched && passwordError ? "signup__error--visible" : ""}`}>
+            <span
+              className={`signup__error ${passwordTouched && passwordError ? "signup__error--visible" : ""}`}
+            >
               {passwordError}
             </span>
           </label>
@@ -72,25 +92,44 @@ function SignUpForm() {
               onChange={(e) => setUsername(e.target.value)}
               onBlur={() => setUsernameTouched(true)}
             />
-            <span className={`signup__error ${usernameTouched && usernameError ? "signup__error--visible" : ""}`}>
+            <span
+              className={`signup__error ${usernameTouched && usernameError ? "signup__error--visible" : ""}`}
+            >
               {usernameError}
             </span>
           </label>
         </div>
         <div className="signup__btns-container">
           <div className="signup__submit-btn-container">
+            <span
+              className={`signup__error-taken signup__error ${emailTaken ? "signup__error--visible" : ""}`}
+            >
+              This email is not available
+            </span>
             <button
               type="button"
               className={`signup__submit-btn ${isValid ? "signup__submit-btn-active" : ""}`}
               disabled={!isValid}
-              onClick={isValid ? () => openModal("complete") : undefined}
+              onClick={() => {
+                if (!isValid) return;
+                if (EXISTING_EMAILS.includes(email.toLowerCase())) {
+                  setEmailTaken(true);
+                } else {
+                  setEmailTaken(false);
+                  openModal("complete");
+                }
+              }}
             >
               Sign Up
             </button>
           </div>
           <div className="signup__switch-btn-container">
             or{" "}
-            <button type="button" className="signup__switcher-btn" onClick={() => openModal("signin")}>
+            <button
+              type="button"
+              className="signup__switcher-btn"
+              onClick={() => openModal("signin")}
+            >
               Sign In
             </button>
           </div>

@@ -71,6 +71,10 @@
   font-size: 12px;
   margin-top: 2px;
 }
+.signup__error-taken {
+  text-align: center;
+  margin-bottom: 5px;
+}
 .signup-error-active {
   height: 460px;
 }

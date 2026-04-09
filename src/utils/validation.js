@@ -2,7 +2,7 @@ const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function getEmailError(value) {
   if (!value) return "";
-  if (!EMAIL_REGEX.test(value)) return "Please enter a valid email address";
+  if (!EMAIL_REGEX.test(value)) return "Invalid email";
   return "";
 }
 

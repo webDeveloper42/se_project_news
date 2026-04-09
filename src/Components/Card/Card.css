@@ -105,6 +105,12 @@
   color: #b6bcbf;
 }
 @media screen and (max-width: 768px) {
+  .card__tooltip {
+    display: none;
+  }
+  .card__action-btn:hover ~ .card__tooltip {
+    visibility: hidden;
+  }
   .card {
     width: 224px;
     height: 420px;
@@ -124,10 +130,11 @@
   .card__description {
     width: 192px;
     height: 88px;
-
+    margin-top: 21px;
     overflow: hidden;
   }
   .card__footer-text {
+    margin-top: -10px;
     width: 192px;
     overflow: hidden;
     white-space: nowrap;
@@ -136,5 +143,10 @@
   .card__action-btn {
     top: 13px;
     right: 13px;
+  }
+
+  .card__tag {
+    top: 13px;
+    left: 13px;
   }
 }

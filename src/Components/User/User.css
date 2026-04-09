@@ -43,3 +43,12 @@
   color: #1a1b22;
   font-weight: 700;
 }
+
+@media screen and (max-width: 768px) {
+  .user__header-text {
+    padding-left: 40px;
+  }
+  .user-cards__content {
+    padding-left: 40px;
+  }
+}

@@ -1,11 +1,25 @@
 import "./Card.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Trash from "../../assets/trash.svg";
 import BookmarkDefault from "../../assets/bookmark.svg";
 import BookmarkHover from "../../assets/bookmark-hover.svg";
+import BookmarkMarked from "../../assets/bookmark-marked.svg";
+import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 
 function Card({ card, isUserCard }) {
   const [isHovered, setIsHovered] = useState(false);
+  const { isLoggedIn, savedCards, toggleSaveCard } = useContext(CurrentUserContext);
+  const isSaved = savedCards.includes(card.id);
+
+  function getBookmarkSrc() {
+    if (isSaved) return BookmarkMarked;
+    if (isHovered) return BookmarkHover;
+    return BookmarkDefault;
+  }
+
+  function handleActionClick() {
+    if (isLoggedIn) toggleSaveCard(card.id);
+  }
 
   return (
     <div className="card">
@@ -13,17 +27,12 @@ function Card({ card, isUserCard }) {
         {isUserCard && <div className="card__tag">{card.tag}</div>}
         <div
           className="card__action-btn"
-          onMouseEnter={() => setIsHovered(true)}
+          onMouseEnter={() => { if (window.innerWidth > 768) setIsHovered(true); }}
           onMouseLeave={() => setIsHovered(false)}
+          onClick={!isUserCard ? handleActionClick : undefined}
         >
           <img
-            src={
-              isUserCard
-                ? Trash
-                : isHovered
-                ? BookmarkHover
-                : BookmarkDefault
-            }
+            src={isUserCard ? Trash : getBookmarkSrc()}
             alt={isUserCard ? "Trash Icon" : "Bookmark Icon"}
           />
         </div>

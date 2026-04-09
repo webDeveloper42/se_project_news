@@ -1,13 +1,12 @@
 import "./CardSection.css";
 import Card from "../Card/Card";
-import { cards } from "../../utils/constants";
 
-function CardSection() {
+function CardSection({ results }) {
   return (
     <div className="cards">
       <div className="cards__content">
         <div className="cards__list">
-          {cards.slice(0, 3).map((card) => (
+          {results.map((card) => (
             <Card key={card.id} card={card} isUserCard={false} />
           ))}
         </div>

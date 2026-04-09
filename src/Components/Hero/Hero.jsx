@@ -1,6 +1,18 @@
 import "./Hero.css";
 import HeroPNG from "../../assets/hero.png";
-function Hero() {
+import { useState } from "react";
+
+function Hero({ onSearch }) {
+  const [query, setQuery] = useState("");
+
+  function handleSearch() {
+    onSearch(query);
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === "Enter") handleSearch();
+  }
+
   return (
     <div className="hero">
       <img className="hero__img" src={HeroPNG} alt="Hero Picture" />
@@ -15,8 +27,13 @@ function Hero() {
             type="text"
             placeholder="Enter topic"
             className="hero__searchbar-input"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
-          <button className="hero__searchbar-btn">Search</button>
+          <button className="hero__searchbar-btn" onClick={handleSearch}>
+            Search
+          </button>
         </div>
       </div>
     </div>

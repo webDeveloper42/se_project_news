@@ -15,7 +15,14 @@ function App() {
   const { pathname } = useLocation();
   const [isLoggedIn, setIsLoggedIn] = useState(pathname === "/user");
   const [activeModal, setActiveModal] = useState(null);
+  const [savedCards, setSavedCards] = useState([]);
   const username = "Raymond";
+
+  function toggleSaveCard(cardId) {
+    setSavedCards((prev) =>
+      prev.includes(cardId) ? prev.filter((id) => id !== cardId) : [...prev, cardId]
+    );
+  }
 
   function handleAuthClick() {
     setIsLoggedIn(false);
@@ -32,7 +39,7 @@ function App() {
 
   return (
     <CurrentUserContext.Provider
-      value={{ isLoggedIn, username, handleAuthClick, activeModal, openModal, closeModal }}
+      value={{ isLoggedIn, username, handleAuthClick, activeModal, openModal, closeModal, savedCards, toggleSaveCard }}
     >
       <div className="page">
         <div className="page__content">
