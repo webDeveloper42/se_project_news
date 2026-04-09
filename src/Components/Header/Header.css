@@ -2,7 +2,7 @@
   background-color: transparent;
   position: absolute;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
   border-bottom: 1px solid grey;
 }
 .header__content {
@@ -104,8 +104,3 @@
   color: #1a1b22;
 }
 
-@media screen and (max-width: 768px) {
-  .header {
-    z-index: 1;
-  }
-}
