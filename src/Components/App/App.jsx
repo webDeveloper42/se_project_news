@@ -23,14 +23,29 @@ function App() {
       return [];
     }
   });
+  const [allCards, setAllCards] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem("allCards")) || [];
+    } catch {
+      return [];
+    }
+  });
   const username = "Raymond";
 
-  function toggleSaveCard(cardId) {
+  function toggleSaveCard(card) {
+    const isSaved = savedCards.includes(card.id);
     setSavedCards((prev) => {
-      const next = prev.includes(cardId)
-        ? prev.filter((id) => id !== cardId)
-        : [...prev, cardId];
+      const next = isSaved
+        ? prev.filter((id) => id !== card.id)
+        : [...prev, card.id];
       localStorage.setItem("savedCards", JSON.stringify(next));
+      return next;
+    });
+    setAllCards((prev) => {
+      const next = isSaved
+        ? prev.filter((c) => c.id !== card.id)
+        : prev.some((c) => c.id === card.id) ? prev : [...prev, card];
+      localStorage.setItem("allCards", JSON.stringify(next));
       return next;
     });
   }
@@ -66,6 +81,7 @@ function App() {
         closeModal,
         savedCards,
         toggleSaveCard,
+        allCards,
       }}
     >
       <div className="page">

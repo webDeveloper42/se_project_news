@@ -18,7 +18,7 @@ function Card({ card, isUserCard }) {
   }
 
   function handleActionClick() {
-    if (isLoggedIn) toggleSaveCard(card.id);
+    if (isLoggedIn) toggleSaveCard(card);
   }
 
   return (
@@ -29,7 +29,7 @@ function Card({ card, isUserCard }) {
           className="card__action-btn"
           onMouseEnter={() => { if (window.innerWidth > 768) setIsHovered(true); }}
           onMouseLeave={() => setIsHovered(false)}
-          onClick={!isUserCard ? handleActionClick : undefined}
+          onClick={handleActionClick}
         >
           <img
             src={isUserCard ? Trash : getBookmarkSrc()}
