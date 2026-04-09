@@ -1,6 +1,7 @@
 import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
+import Menu from "../../assets/menu.svg";
 import Logout from "../../assets/logout.svg";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 function Header() {
@@ -18,14 +19,25 @@ function Header() {
             NewsExplorer
           </Link>
         </div>
+        <div className="header__menu">
+          <img
+            className="header__menu-img"
+            src={Menu}
+            alt="Header menu button"
+          />
+        </div>
         <div className="header__links">
-          <div className={`header__home-btn ${!isDark ? "header__home-btn-active" : ""}`}>
+          <div
+            className={`header__home-btn ${!isDark ? "header__home-btn-active" : ""}`}
+          >
             <Link to={"/"} className="link header__home-btn-text">
               Home
             </Link>
           </div>
           {isLoggedIn && (
-            <div className={`header__saved-article-btn ${isDark ? "header__saved-article-btn-active" : ""}`}>
+            <div
+              className={`header__saved-article-btn ${isDark ? "header__saved-article-btn-active" : ""}`}
+            >
               <Link
                 to="/user"
                 className={`header__saved-article-btn-text link ${isDark ? "header__saved-article-btn-user" : ""}`}

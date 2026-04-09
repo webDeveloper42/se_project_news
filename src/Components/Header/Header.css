@@ -103,4 +103,15 @@
 .header__saved-article-btn-user {
   color: #1a1b22;
 }
+.header__menu {
+  display: none;
+}
 
+@media screen and (max-width: 320px) {
+  .header__links {
+    display: none;
+  }
+  .header__menu {
+    display: flex;
+  }
+}
