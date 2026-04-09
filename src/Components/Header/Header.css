@@ -2,7 +2,7 @@
   background-color: transparent;
   position: absolute;
   width: 100%;
-  z-index: 2;
+  z-index: 4;
   border-bottom: 1px solid grey;
 }
 .header__content {
@@ -119,6 +119,14 @@
     background-color: transparent;
     outline: none;
     cursor: pointer;
+  }
+  .header__modal-exit {
+    display: flex;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    filter: invert(1);
   }
   .header__menu-img--dark {
     filter: invert(1);

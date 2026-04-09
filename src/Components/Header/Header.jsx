@@ -6,7 +6,7 @@ import ExitBtn from "../../assets/exitbtn.svg";
 import Logout from "../../assets/logout.svg";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 function Header() {
-  const { isLoggedIn, username, handleAuthClick, openModal } =
+  const { isLoggedIn, username, handleAuthClick, openModal, closeModal, activeModal } =
     useContext(CurrentUserContext);
   const { pathname } = useLocation();
   const isDark = pathname === "/user";
@@ -24,13 +24,23 @@ function Header() {
             NewsExplorer
           </Link>
         </div>
-        <button className="header__menu" onClick={() => setMenuOpen(true)}>
-          <img
-            className={`header__menu-img ${!isDark ? "header__menu-img--light" : "header__menu-img--dark"}`}
-            src={Menu}
-            alt="Header menu button"
-          />
-        </button>
+        {activeModal ? (
+          <button className="header__modal-exit" onClick={closeModal}>
+            <img
+              className="header__mobile-exit--light"
+              src={ExitBtn}
+              alt="Close modal"
+            />
+          </button>
+        ) : (
+          <button className="header__menu" onClick={() => setMenuOpen(true)}>
+            <img
+              className={`header__menu-img ${!isDark ? "header__menu-img--light" : "header__menu-img--dark"}`}
+              src={Menu}
+              alt="Header menu button"
+            />
+          </button>
+        )}
         <div
           className={`header__mobile-dropdown ${menuOpen ? "header__mobile-dropdown--open" : ""}`}
         >
