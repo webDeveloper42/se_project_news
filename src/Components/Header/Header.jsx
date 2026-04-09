@@ -1,6 +1,6 @@
 import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Menu from "../../assets/menu.svg";
 import ExitBtn from "../../assets/exitbtn.svg";
 import Logout from "../../assets/logout.svg";
@@ -10,8 +10,12 @@ function Header() {
     useContext(CurrentUserContext);
   const { pathname } = useLocation();
   const isDark = pathname === "/user";
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className={`nav header ${isDark ? "header__header-user" : ""}`}>
+    <header
+      className={`nav header ${isDark ? "header__header-user" : ""} ${menuOpen ? "header--menu-open" : ""}`}
+    >
       <div
         className={`header__content ${isDark ? "header__content--dark" : ""}`}
       >
@@ -20,16 +24,73 @@ function Header() {
             NewsExplorer
           </Link>
         </div>
-        <button className="header__menu">
+        <button className="header__menu" onClick={() => setMenuOpen(true)}>
           <img
-            className="header__menu-img"
+            className={`header__menu-img ${!isDark ? "header__menu-img--light" : ""}`}
             src={Menu}
             alt="Header menu button"
           />
         </button>
-        <div className="header__mobile-dropdown">
-          <div className="header__overlay"></div>
-          <img src={ExitBtn} alt="Exit button icon" />
+        <div
+          className={`header__mobile-dropdown ${menuOpen ? "header__mobile-dropdown--open" : ""}`}
+        >
+          <div className="header__mobile-top">
+            <Link to={"/"} className="header__logo-name header__mobile-logo">
+              NewsExplorer
+            </Link>
+            <button
+              className="header__mobile-exit"
+              onClick={() => setMenuOpen(false)}
+            >
+              <img
+                className={!isDark ? "header__exit--light" : ""}
+                src={ExitBtn}
+                alt="Exit button icon"
+              />
+            </button>
+          </div>
+          <div className="header__mobile-links">
+            <Link
+              to={"/"}
+              className="link header__mobile-link"
+              onClick={() => setMenuOpen(false)}
+            >
+              Home
+            </Link>
+            {isLoggedIn && (
+              <Link
+                to="/user"
+                className="link header__mobile-link"
+                onClick={() => setMenuOpen(false)}
+              >
+                Saved articles
+              </Link>
+            )}
+            <button
+              onClick={() => {
+                setMenuOpen(false);
+                isLoggedIn ? handleAuthClick() : openModal("signin");
+              }}
+              className={`btn header__signin-btn header__mobile-signin ${isLoggedIn ? "header__signin-btn--logged-in" : ""}`}
+            >
+              {isLoggedIn ? (
+                <>
+                  {username}
+                  <img
+                    src={Logout}
+                    alt="Logout"
+                    className="header__logout-icon header__logout-icon-filtered"
+                  />
+                </>
+              ) : (
+                "Sign In"
+              )}
+            </button>
+          </div>
+          <div
+            className="header__overlay"
+            onClick={() => setMenuOpen(false)}
+          ></div>
         </div>
         <div className="header__links">
           <div

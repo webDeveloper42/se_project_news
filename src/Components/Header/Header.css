@@ -44,7 +44,6 @@
 .header__home-btn-active {
   border-bottom: 3px solid #ffffff;
 }
-
 .header__signin-btn {
   font-family: "Roboto";
   border: 1px solid #d1d2d6;
@@ -106,6 +105,9 @@
 .header__menu {
   display: none;
 }
+.header__mobile-dropdown {
+  display: none;
+}
 
 @media screen and (max-width: 320px) {
   .header__links {
@@ -116,8 +118,87 @@
     border: none;
     background-color: transparent;
     outline: none;
+    cursor: pointer;
+  }
+  .header__menu-img--light {
+    filter: invert(1);
+  }
+  .header__exit--light {
+    filter: invert(1);
+  }
+  .header__menu-img--dark {
+    filter: none;
+  }
+  .header--menu-open {
+    background-color: #1a1b22;
   }
   .header__mobile-dropdown {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+  }
+  .header__mobile-dropdown--open {
+    display: block;
+  }
+  .header__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+  /* Dropdown top bar: logo + exit btn */
+  .header__mobile-top {
+    position: relative;
+    z-index: 2;
+    background-color: #1a1b22;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 80px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  .header__mobile-logo {
+    color: #ffffff;
+    font-family: "Roboto Slab";
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  /* X icon is white on dark dropdown background */
+  .header__mobile-exit {
+    position: static;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    filter: invert(1);
+    display: flex;
+  }
+  .header__mobile-links {
+    position: relative;
+    z-index: 2;
+    background-color: #1a1b22;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    gap: 24px;
+  }
+  .header__mobile-link {
+    color: #ffffff;
+    font-family: "Roboto";
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .header__mobile-signin {
+    color: #ffffff;
+    border-color: #ffffff;
+    align-self: flex-start;
   }
 }
