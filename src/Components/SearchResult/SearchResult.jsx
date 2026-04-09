@@ -1,5 +1,4 @@
 import "./SearchResult.css";
-import "../../vendor/fonts.css";
 import CardSection from "../CardSection/CardSection";
 
 function SearchResult({ results, hasMore, onShowMore }) {
