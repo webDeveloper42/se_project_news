@@ -16,7 +16,11 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 320px) {
+  .cards {
+    height: auto;
+    padding: 0;
+  }
   .cards__list {
     flex-direction: column;
   }

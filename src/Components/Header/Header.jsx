@@ -2,6 +2,7 @@ import "./Header.css";
 import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import Menu from "../../assets/menu.svg";
+import ExitBtn from "../../assets/exitbtn.svg";
 import Logout from "../../assets/logout.svg";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
 function Header() {
@@ -19,12 +20,16 @@ function Header() {
             NewsExplorer
           </Link>
         </div>
-        <div className="header__menu">
+        <button className="header__menu">
           <img
             className="header__menu-img"
             src={Menu}
             alt="Header menu button"
           />
+        </button>
+        <div className="header__mobile-dropdown">
+          <div className="header__overlay"></div>
+          <img src={ExitBtn} alt="Exit button icon" />
         </div>
         <div className="header__links">
           <div

@@ -113,5 +113,11 @@
   }
   .header__menu {
     display: flex;
+    border: none;
+    background-color: transparent;
+    outline: none;
+  }
+  .header__mobile-dropdown {
+    display: none;
   }
 }
