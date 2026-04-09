@@ -17,5 +17,5 @@ If you are developing a production application, we recommend using TypeScript wi
 
 ## Project Pitch Video
 
-Check out [this video](ADD_LINK_HERE), where I describe my
+Check out [this video](https://www.loom.com/share/8a944aa500c14639a753cb47aee198d6), where I describe my
 project and some challenges I faced while building it.
