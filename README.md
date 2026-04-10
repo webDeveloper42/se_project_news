@@ -20,4 +20,4 @@ If you are developing a production application, we recommend using TypeScript wi
 Check out [this video](https://www.loom.com/share/8a944aa500c14639a753cb47aee198d6), where I describe my
 project and some challenges I faced while building it.
 
-Link to project website: [click here](se-project-news-lxcu7n0q1-webdeveloper42s-projects.vercel.app)
+Link to project website: [click here](https://webdeveloper42.github.io/se_project_news/)
