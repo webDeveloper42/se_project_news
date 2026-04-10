@@ -21,12 +21,7 @@ function ModalWithForm() {
     return () => document.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, closeModal]);
 
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
-  }, [isOpen]);
-
-  function handleOverlayClick(e) {
+function handleOverlayClick(e) {
     if (e.target === e.currentTarget) closeModal();
   }
 

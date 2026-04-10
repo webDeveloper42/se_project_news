@@ -48,8 +48,8 @@
 @font-face {
   font-family: "Roboto Slab";
   src:
-    url("./final-project_fonts_latin/roboto-slab-400.woff2") format("woff2"),
-    url("./final-project_fonts_latin/roboto-slab-400.woff") format("woff");
+    url("./final-project_fonts_latin/roboto-slab-400-regular.woff2") format("woff2"),
+    url("./final-project_fonts_latin/roboto-slab-400-regular.woff") format("woff");
   font-weight: 400;
 }
 
