@@ -6,6 +6,9 @@
   height: 100%;
   z-index: 3;
 }
+.modal--closed {
+  pointer-events: none;
+}
 .modal__container {
   width: 100%;
   height: 100%;
@@ -16,6 +19,7 @@
 }
 .modal__container-inactive {
   visibility: hidden;
+  pointer-events: none;
 }
 .modal__container-active {
   visibility: visible;

@@ -22,7 +22,7 @@ function ModalWithForm({ isOpen, children }) {
   }
 
   return (
-    <div className="modal">
+    <div className={`modal ${!isOpen ? "modal--closed" : ""}`}>
       <div
         className={`modal__container ${isOpen ? "modal__container-active" : "modal__container-inactive"}`}
         onClick={handleOverlayClick}
