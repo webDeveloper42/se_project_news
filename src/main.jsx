@@ -5,7 +5,7 @@ import "./index.css";
 import App from "./Components/App/App.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/se_project_news/">
     <App />
   </BrowserRouter>,
 );

@@ -8,7 +8,7 @@ function UserCardSection() {
   const userCards = allCards.filter((card) => savedCards.includes(card.id));
 
   return (
-    <div className="user-cards__card-section">
+    <section className="user-cards">
       <div className="user-cards__content">
         <div className="user-cards__list">
           {userCards.map((card) => (
@@ -16,7 +16,7 @@ function UserCardSection() {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

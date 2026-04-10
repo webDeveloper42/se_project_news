@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import { useState } from "react";
 import "../../vendor/normalize.css";
 import "../../vendor/fonts.css";
@@ -8,7 +8,14 @@ import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import Footer from "../Footer/Footer";
 import User from "../User/User";
+import SignInForm from "../SignInForm/SignInForm";
+import SignUpForm from "../SignUpForm/SignUpForm";
+import CompleteForm from "../CompleteForm/CompleteForm";
 import { CurrentUserContext } from "../../Contexts/CurrentUserContext";
+
+function ProtectedRoute({ isLoggedIn, children }) {
+  return isLoggedIn ? children : <Navigate to="/" replace />;
+}
 
 function App() {
   const navigate = useNavigate();
@@ -89,11 +96,26 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/saved-news" element={<User />} />
+            <Route
+              path="/saved-news"
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <User />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
           <Footer />
         </div>
-        <ModalWithForm />
+        <ModalWithForm isOpen={activeModal === "signin"}>
+          <SignInForm />
+        </ModalWithForm>
+        <ModalWithForm isOpen={activeModal === "signup"}>
+          <SignUpForm />
+        </ModalWithForm>
+        <ModalWithForm isOpen={activeModal === "complete"}>
+          <CompleteForm />
+        </ModalWithForm>
       </div>
     </CurrentUserContext.Provider>
   );
