@@ -1,0 +1,20 @@
+# Build & dependency directories
+node_modules/
+dist/
+build/
+out/
+target/
+
+# Coverage and logs
+coverage/
+*.log
+
+# Environment variables
+.env*
+
+# Documentation or generated files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+.next/
+.nuxt/

@@ -1,0 +1,64 @@
+.footer {
+  background-color: #ffffff;
+  margin-top: auto;
+}
+.footer__copyright {
+  font-family: "Roboto";
+  color: #b6bcbf;
+  font-size: 16px;
+  line-height: 22px;
+}
+.footer__links {
+  display: flex;
+  align-items: center;
+}
+.footer__icons {
+  display: flex;
+  align-items: center;
+}
+.footer__tripleten-btn,
+.footer__home-btn {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+  margin-right: 40px;
+}
+
+.footer__github {
+  padding-right: 24px;
+}
+@media screen and (max-width: 320px) {
+  .footer {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+  }
+  .footer__links {
+    display: contents;
+  }
+  .footer__home-btn {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    margin-right: 0;
+  }
+  .footer__tripleten-btn {
+    margin-top: 20px;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    margin-right: 0;
+  }
+  .footer__icons {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .footer__copyright {
+    margin-top: 38px;
+    width: 288px;
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+}

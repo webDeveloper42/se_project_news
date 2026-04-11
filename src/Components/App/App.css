@@ -1,0 +1,42 @@
+.page {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  font-family: "Roboto", Arial, sans-serif;
+}
+.page__content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.btn {
+  width: 176px;
+  height: 48px;
+  border-radius: 100px;
+}
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+.active__btn {
+  border-bottom: 1px solid #ffffff;
+}
+.nav {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 104px;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    padding: 0 40px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .nav {
+    padding: 0 20px;
+  }
+}

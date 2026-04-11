@@ -1,0 +1,14 @@
+.main {
+  position: relative;
+}
+
+.main__error {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+  text-align: center;
+  padding: 80px 104px;
+  max-width: 600px;
+  margin: 0 auto;
+}

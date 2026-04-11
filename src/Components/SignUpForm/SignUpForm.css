@@ -1,0 +1,110 @@
+.signup {
+  padding: 36px 34px;
+  width: 430px;
+  height: 450px;
+  opacity: 1;
+  border-width: 1px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.signup__title {
+  font-family: "Roboto";
+  font-weight: 900;
+  color: #1a1b22;
+  font-size: 24px;
+  line-height: 100%;
+  margin-bottom: 22px;
+}
+.signup__form-data {
+  display: flex;
+  flex-direction: column;
+  gap: 31px;
+}
+.signup__label {
+  color: #2f71e5;
+  font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
+}
+.signup__input {
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  font-family: "Roboto";
+  width: 100%;
+  outline: none;
+  margin-top: 9px;
+}
+.signup__input:focus {
+  border-bottom: 2px solid #2f71e5;
+}
+.signup__btns-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 39px;
+  width: 100%;
+}
+.signup__submit-btn {
+  font-family: "Roboto";
+  border: none;
+  width: 358px;
+  height: 64px;
+  border-radius: 100px;
+  background-color: #e6e8eb;
+  color: #b6bcbf;
+  cursor: pointer;
+}
+.signup__submit-btn-active {
+  background-color: #2f71e5;
+  color: #ffffff;
+}
+.signup__submit-btn.signup__submit-btn-active:hover {
+  background-color: #347eff;
+  color: #ffffff;
+}
+.signup__error {
+  display: none;
+  color: #ff0000;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  margin-top: 2px;
+}
+.signup__error-taken {
+  text-align: center;
+  margin-bottom: 5px;
+}
+.signup-error-active {
+  height: 460px;
+}
+.signup__error--visible {
+  display: block;
+}
+.signup__switch-btn-container {
+  margin-top: 16px;
+  font-family: "Roboto";
+}
+.signup__switcher-btn {
+  border: none;
+  background-color: transparent;
+  color: #2f71e5;
+  cursor: pointer;
+}
+@media screen and (max-width: 320px) {
+  .signup {
+    padding: 10px;
+    right: -159px;
+    top: -355px;
+    position: absolute;
+    height: 467px;
+    width: 300px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+  }
+  .signup__submit-btn {
+    width: 310px;
+  }
+}

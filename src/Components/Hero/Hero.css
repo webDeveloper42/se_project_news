@@ -1,0 +1,146 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 576px;
+}
+.hero__img {
+  position: absolute;
+  width: 100%;
+  height: 576px;
+  object-fit: cover;
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+.hero__title,
+.hero__description {
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: 0;
+}
+.hero__title {
+  font-family: "Roboto Slab";
+  font-size: 60px;
+  line-height: 64px;
+  width: 608px;
+  height: 128px;
+  margin-bottom: 32px;
+}
+.hero__description {
+  font-family: "Roboto";
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 88px;
+  width: 545px;
+}
+.hero__searchbar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 64px;
+}
+.hero__searchbar-input {
+  width: 411px;
+  font-family: "Roboto";
+  height: 64px;
+  border-radius: 100px;
+  border: 1px solid #d1d2d6;
+  padding-left: 24px;
+  align-items: center;
+  outline: none;
+}
+.hero__searchbar-btn {
+  border: none;
+  display: flex;
+  background-color: #2f71e5;
+  color: #ffffff;
+  width: 168px;
+  height: 70px;
+  border-radius: 100px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  right: 85px;
+  padding: 20px 56px;
+  outline: none;
+  cursor: pointer;
+}
+
+.hero__searchbar-btn:hover {
+  background-color: #347eff;
+}
+.hero__searchbar-input:focus {
+  outline: 2px solid #2f71e5;
+}
+.hero__searchbar-error {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #ff6f6f;
+  margin-top: 8px;
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .hero__content {
+    padding-left: 80px;
+  }
+  .hero__title {
+    width: 385px;
+    height: 80px;
+    font-size: 36px;
+    line-height: 40px;
+  }
+  .hero__description {
+    width: 452px;
+    height: 48px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .hero__searchbar-input {
+    height: 56px;
+    width: 350px;
+  }
+  .hero__searchbar-btn {
+    height: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .hero__content {
+    padding-left: 0;
+    margin-top: 80px;
+  }
+  .hero__title {
+    width: 285px;
+    height: 80px;
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  .hero {
+    height: 500px;
+  }
+  .hero__img {
+    height: 500px;
+  }
+  .hero__description {
+    padding-left: 20px;
+    width: 288px;
+    height: 72px;
+    margin-bottom: 50px;
+  }
+  .hero__searchbar {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+  }
+  .hero__searchbar-input {
+    width: 288px;
+  }
+  .hero__searchbar-btn {
+    position: static;
+    width: 100%;
+  }
+}

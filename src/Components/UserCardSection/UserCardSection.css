@@ -1,0 +1,15 @@
+.user-cards {
+  background-color: #f5f6f7;
+  padding: 62px 0;
+}
+.user-cards__content {
+  display: flex;
+  justify-content: center;
+}
+.user-cards__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-start;
+  width: 1248px;
+}
